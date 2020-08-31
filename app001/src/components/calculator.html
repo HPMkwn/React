@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./calculator.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+</head>
+
+<body class="body">
+    <div class="container">
+        <div class="calc-body">
+            <div class="calc-screen">
+                <div class="calc-operation">
+                    2536 + 419
+                </div>
+                <div class="calc-typed">
+                    2955<span class="blink-me">_</span>
+                </div>
+            </div>
+            <div class="calc-botton-row">
+                <div class="button c" onClick={this.onClickHandler} value="#">C</div>
+                <div class="button" onClick={this.onClickHandler} value="">≠</div>
+                <div class="button" onClick={this.onClickHandler} value="">%</div>
+                <div class="button l" onClick={this.onClickHandler} value="">/</div>
+            </div>
+            <div class="calc-botton-row">
+                <div class="button" onClick={this.onClickHandler} value="7">7</div>
+                <div class="button" onClick={this.onClickHandler} value="8">8</div>
+                <div class="button" onClick={this.onClickHandler} value="9">9</div>
+                <div class="button l" onClick={this.onClickHandler} value="*">x</div>
+            </div>
+            <div class="calc-botton-row">
+                <div class="button" onClick={this.onClickHandler} value="4">4</div>
+                <div class="button" onClick={this.onClickHandler} value="5">5</div>
+                <div class="button" onClick={this.onClickHandler} value="6">6</div>
+                <div class="button l" onClick={this.onClickHandler} value="-">-</div>
+            </div>
+            <div class="calc-botton-row">
+                <div class="button" onClick={this.onClickHandler} value="1">1</div>
+                <div class="button" onClick={this.onClickHandler} value="2">2</div>
+                <div class="button" onClick={this.onClickHandler} value="3">3</div>
+                <div class="button l" onClick={this.onClickHandler} value="+">+</div>
+            </div>
+            <div class="calc-botton-row">
+                <div class="button " onClick={this.onClickHandler} value="0">0</div>
+                <div class="button" onClick={this.onClickHandler} value=".">.</div>
+                <div class="button" onClick={this.onClickHandler} value="$">></div>
+                <div class="button l" onClick={this.onClickHandler} value="=">=</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function blinker() {
+            $('.blink-me').fadeOut(200);
+            $('.blink-me').fadeIn(200);
+        }
+        setInterval(blinker, 500);
+    </script>
+</body>
+
+</html>

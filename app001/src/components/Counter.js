@@ -1,25 +1,30 @@
-import React, { Component } from 'react'
+import React from "react";
 
-export default class Classcomp extends Component {
-
-
-    constructor(props){
-        super(props);
-        this.state = {date : new Date()};
-    }
-    componentDidMount(){
-        this.timerID = setInterval(()=>this.clockTime(),1000);
+const Counter = WrappedComponent => {
+  class NewComponent extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = { count: 0 };
     }
 
-    clockTime(){
-        this.setState({date : new Date()});
-    }
+    countHandler = () => {
+      this.setState((prevStat) => {
+        return { count: prevStat.count + 1 };
+      });
+      console.log(this.state.count);
+    };
 
     render() {
-        return (
-            <div>
-                {this.state.date.toLocaleTimeString()}
-            </div>
-        )
+      return (
+        <WrappedComponent
+          count={this.state.count}
+          countHandler={this.countHandler}
+          name={this.props.name}
+        />
+      );
     }
-}
+  }
+  return NewComponent;
+};
+
+export default Counter;
